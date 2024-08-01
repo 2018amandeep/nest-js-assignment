@@ -14,9 +14,12 @@ import { MailerModule } from './mailer/mailer.module';
 import { RecaptchaModule } from './recaptcha/recaptcha.module';
 import { CmsModule } from './cms/cms.module';
 import { ProductModule } from './product/product.module';
+import { ElasticSearchModule } from './elastic-search/elastic-search.module';
 
 @Module({
-  imports: [DatabaseModule, AuthModule, UsersModule, SearchModule, ReviewsModule, CartModule, OrderModule, InventoryModule, ShippingModule, MailerModule, RecaptchaModule, CmsModule, ProductModule],
+  imports: [DatabaseModule, AuthModule, UsersModule, SearchModule, ReviewsModule, CartModule, OrderModule, InventoryModule, ShippingModule, MailerModule, RecaptchaModule, CmsModule, ProductModule, ElasticSearchModule,
+    //  ProductModule
+    ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -10,15 +10,15 @@ export class CmsController {
     private readonly strapiService: StrapiService,
   ) {}
 
-  @Get('contentful/:contentType')
-  async getContentfulEntries(@Param('contentType') contentType: string) {
-    return this.contentfulService.getEntries(contentType);
-  }
+  // @Get('contentful/:contentType')
+  // async getContentfulEntries(@Param('contentType') contentType: string) {
+  //   return this.contentfulService.getEntries(contentType);
+  // }
 
-  @Get('contentful/:contentType/:id')
-  async getContentfulEntry(@Param('contentType') contentType: string, @Param('id') id: string) {
-    return this.contentfulService.getEntry(id);
-  }
+  // @Get('contentful/:contentType/:id')
+  // async getContentfulEntry(@Param('contentType') contentType: string, @Param('id') id: string) {
+  //   return this.contentfulService.getEntry(id);
+  // }
 
   @Get('strapi/:contentType')
   async getStrapiEntries(@Param('contentType') contentType: string) {

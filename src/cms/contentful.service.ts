@@ -7,20 +7,20 @@ import { ConfigService } from '@nestjs/config';
 export class ContentfulService {
   private readonly client;
 
-  constructor(private readonly configService: ConfigService) {
-    this.client = createClient({
-      space: this.configService.get<string>('CONTENTFUL_SPACE_ID'),
-      accessToken: this.configService.get<string>('CONTENTFUL_ACCESS_TOKEN'),
-    });
-  }
+  // constructor(private readonly configService: ConfigService) {
+  //   this.client = createClient({
+  //     space: this.configService.get<string>('CONTENTFUL_SPACE_ID'),
+  //     accessToken: this.configService.get<string>('CONTENTFUL_ACCESS_TOKEN'),
+  //   });
+  // }
 
-  async getEntries(contentType: string): Promise<Entry<any>[]> {
-    const entries = await this.client.getEntries({ content_type: contentType });
-    return entries.items;
-  }
+  // async getEntries(contentType: string): Promise<Entry<any>[]> {
+  //   const entries = await this.client.getEntries({ content_type: contentType });
+  //   return entries.items;
+  // }
 
-  async getEntry(entryId: string): Promise<Entry<any>> {
-    const entry = await this.client.getEntry(entryId);
-    return entry;
-  }
+  // async getEntry(entryId: string): Promise<Entry<any>> {
+  //   const entry = await this.client.getEntry(entryId);
+  //   return entry;
+  // }
 }

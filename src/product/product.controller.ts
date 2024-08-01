@@ -42,21 +42,21 @@ export class ProductController {
     return this.productService.deleteProduct(productId);
   }
 
-  @Post(':id/images')
-  @UseInterceptors(FileInterceptor('file', {
-    storage: multerS3({
-      s3: s3,
-      bucket: process.env.AWS_S3_BUCKET,
-      metadata: (req, file, cb) => {
-        cb(null, { fieldName: file.fieldname });
-      },
-      key: (req, file, cb) => {
-        cb(null, `${Date.now().toString()}-${file.originalname}`);
-      },
-    }),
-  }))
-  async addProductImages(@Param('id') productId: string, @UploadedFiles() files: Express.Multer.File[]): Promise<Product> {
-    const imageUrls = files.map(file => file.location);
-    return this.productService.addProductImages(productId, imageUrls);
-  }
+  // @Post(':id/images')
+  // @UseInterceptors(FileInterceptor('file', {
+  //   storage: multerS3({
+  //     s3: s3,
+  //     bucket: process.env.AWS_S3_BUCKET,
+  //     metadata: (req, file, cb) => {
+  //       cb(null, { fieldName: file.fieldname });
+  //     },
+  //     key: (req, file, cb) => {
+  //       cb(null, `${Date.now().toString()}-${file.originalname}`);
+  //     },
+  //   }),
+  // }))
+  // async addProductImages(@Param('id') productId: string, @UploadedFiles() files: Express.Multer.File[]): Promise<Product> {
+  //   const imageUrls = files.map(file => file.location);
+  //   return this.productService.addProductImages(productId, imageUrls);
+  // }
 }
