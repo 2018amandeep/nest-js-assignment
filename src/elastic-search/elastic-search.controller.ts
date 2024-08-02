@@ -2,8 +2,8 @@
 import { Controller, Get, Param, Query, Post, Body } from '@nestjs/common';
 import { ElasticsearchService } from './elastic-search.service';
 
-@Controller('example')
-export class ExampleController {
+@Controller('elastic')
+export class ElasticSearchController {
   constructor(private readonly elasticsearchService: ElasticsearchService) {}
 
   // @Post('index')

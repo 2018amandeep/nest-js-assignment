@@ -1,6 +1,7 @@
 // elasticsearch.module.ts
 import { Module } from '@nestjs/common';
-import { ElasticsearchModule } from '@nestjs/elasticsearch';
+import { ElasticsearchModule, ElasticsearchService } from '@nestjs/elasticsearch';
+import { ElasticSearchController } from './elastic-search.controller';
 
 @Module({
   imports: [
@@ -13,6 +14,8 @@ import { ElasticsearchModule } from '@nestjs/elasticsearch';
       // },
     }),
   ],
+  providers: [ElasticsearchService],
+  controllers: [ElasticSearchController],
   exports: [ElasticsearchModule],
 })
 export class ElasticSearchModule {}
